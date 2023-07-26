@@ -1,7 +1,7 @@
 
 
 function scoreGuess() {
-return "C";
+return ["C"];
 };
 
 module.exports = scoreGuess;
