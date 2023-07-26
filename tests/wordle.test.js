@@ -8,10 +8,10 @@ describe('scoreGuess', () => {
         expect(scoreGuess('b', 'a')).toEqual(['I']);
     });
      //letters that do belong in the word but not in the location
+    //b is in the target word but incorrect position = A(almost)
+     // x is not in the target word = I(Incorrect)
     test('identifies almost letters', () => {
-        //b is in the target word but incorrect position = A(almost)
-        // x is not in the target word = I
-        expect(scoreGuess('bx', 'ab')).toEqual(['A','I']);
+        expect(scoreGuess('bx', 'ab')).toEqual(['A', 'I']);
 
     });
 });
