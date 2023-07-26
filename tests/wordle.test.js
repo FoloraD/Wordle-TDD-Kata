@@ -3,6 +3,9 @@ describe('scoreGuess', () => {
     test('identifies correct letters', () => {
         expect(scoreGuess('a', 'a')).toEqual(['C'])
     });
+    test('identifies incorrect letters', () => {
+        expect(scoreGuess('b', 'a')).toEqual(['I']);
+    });
 });
 
 
