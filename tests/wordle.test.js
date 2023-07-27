@@ -1,21 +1,55 @@
 const scoreGuess = require('../src/wordle')
-describe('scoreGuess', () => {
-    test('identifies correct letters', () => {
-        expect(scoreGuess('a', 'a')).toEqual(['C'])
-    });
+describe('No matching characters', () => {
    
-    test('identifies incorrect letters', () => {
+    test('identifies no matching characters', () => {
         expect(scoreGuess('b', 'a')).toEqual(['I']);
     });
-     //letters that do belong in the word but not in the location
-    //b is in the target word but incorrect position = A(almost)
-     // x is not in the target word = I(Incorrect)
-    test('identifies almost letters', () => {
-        expect(scoreGuess('bx', 'ab')).toEqual(['A', 'I']);
 
+    test('identifies 5 non matching characters', () => {
+        expect(scoreGuess('bcdef', 'apwju')).toEqual(['I', 'I', 'I', 'I', 'I']);
     });
 
 });
 
+describe('All matching characters', () => {
+    test('identifies match in 1 character string', () => {
+        expect(scoreGuess('a', 'a')).toEqual(['C'])
+    });
+
+    test('identifies 5 characters in correct position', () => {
+        expect(scoreGuess('ggggg', 'ggggg')).toEqual(['C', 'C', 'C', 'C', 'C']);
+    });
+});
+ 
+describe('Some characters match in correct positions', () => {
+
+    test('identifies 1 character in correct position', () => {
+        expect(scoreGuess('bx', 'ab')).toEqual(['A', 'I']);
+    });
+
+    test('identifies 2 characters in correct positions', () => {
+        expect(scoreGuess('xcgd', 'dxpw')).toEqual(['A', 'I', 'I', 'A']);
+    });
+    
+    test('identifies 3 characters in correct positions', () => {
+        expect(scoreGuess('alert', 'alarm')).toEqual(['C', 'C', 'I', 'C', 'I']);
+    });
+
+});
+
+describe('Characters match in correct positions', () => {
+
+    test('identifies 1 character in correct position', () => {
+        expect(scoreGuess('bx', 'ab')).toEqual(['A', 'I']);
+    });
+
+    test('identifies 2 characters in correct positions', () => {
+        expect(scoreGuess('xcgd', 'dxpw')).toEqual(['A', 'I', 'I', 'A']);
+    });
+    test('identifies 3 characters in correct positions', () => {
+        expect(scoreGuess('alert', 'alarm')).toEqual(['C', 'C', 'I', 'C', 'I']);
+    });
+
+});
 
 
