@@ -21,3 +21,18 @@ return score;
 };
 
 module.exports = scoreGuess;
+
+//Solution
+/**
+ * The function 'scoreGuess' takes 2 arguments 'guess' and 'target' and returns a 'score' array
+ * The function iterates through each character of 'guess' and compares it to the character at the same index in 'target'
+ * If characters match '2' is added to 'score' array
+ * If characters dont match but the character from 'guess' is present in 'target' '1' is added to the 'score' array
+ * Otherwise '0' is added to the 'score' array
+ * 
+ *
+ * 
+ * 
+ * 
+ * 
+ */
