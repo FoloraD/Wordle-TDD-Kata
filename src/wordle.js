@@ -9,11 +9,11 @@ function scoreGuess(guess, target) {
 let score = [];
 for(let i = 0; i < guess.length; i++) { 
     if (guess[i] === target[i]) {
-        score.push('C'); 
+        score.push('2'); 
     }else if(target.includes(guess[i])) {
-        score.push('A'); 
+        score.push('1'); 
     }else {
-        score.push('I');
+        score.push('0');
     }
     
 }
