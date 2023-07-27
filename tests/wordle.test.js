@@ -14,6 +14,7 @@ describe('scoreGuess', () => {
         expect(scoreGuess('bx', 'ab')).toEqual(['A', 'I']);
 
     });
+
 });
 
 

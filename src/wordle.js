@@ -10,7 +10,7 @@ let score = [];
 for(let i = 0; i < guess.length; i++) { 
     if (guess[i] === target[i]) {
         score.push('C'); 
-    }else if(score.includes(guess[i])) {
+    }else if(target.includes(guess[i])) {
         score.push('A'); 
     }else {
         score.push('I');
