@@ -17,7 +17,7 @@ for(let i = 0; i < guess.length; i++) {
     }
     
 }
-return score;
+return score.join('');
 };
 
 module.exports = scoreGuess;
